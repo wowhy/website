@@ -119,6 +119,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\960.css" />
+    <Content Include="Content\960_24_col.css" />
     <Content Include="Content\images\20140105204554.jpg" />
     <Content Include="Content\images\20140105215845.jpg" />
     <Content Include="Content\images\20140105220108.jpg" />
