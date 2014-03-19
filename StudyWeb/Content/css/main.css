@@ -1,0 +1,22 @@
+﻿.header {
+	width: 100%;
+    height: 100%;
+	padding: 21px;
+}
+
+.left {
+    float: left;
+}
+
+.right { 
+	float: right;
+}
+
+.title {
+	font-size: 30px;
+}
+
+.title-sub {
+	margin: 0;
+	color: #0589C7;
+}
