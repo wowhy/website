@@ -84,6 +84,7 @@
   <ItemGroup>
     <Content Include="Content\css\main.css" />
     <Content Include="Default.aspx" />
+    <Content Include="FramePage\GridMeeting.aspx" />
     <Content Include="FramePage\Meeting.aspx" />
     <Content Include="FramePage\RoomList.aspx" />
     <Content Include="Global.asax" />
@@ -92,10 +93,18 @@
     <Content Include="Scripts\ext-all.js" />
     <Content Include="Scripts\extnet-all.js" />
     <Content Include="Scripts\jquery-1.10.1.min.js" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\meeting.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajax\MeetingItems.ashx.cs">
+      <DependentUpon>MeetingItems.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Ajax\MeetingRoom.ashx.cs">
       <DependentUpon>MeetingRoom.ashx</DependentUpon>
     </Compile>
@@ -106,7 +115,9 @@
     <Compile Include="Controller\DefaultController.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controller\MeetingController.cs" />
+    <Compile Include="Controller\MeetingController.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Controller\LoginController.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -119,6 +130,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FramePage\GridMeeting.aspx.cs">
+      <DependentUpon>GridMeeting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FramePage\GridMeeting.aspx.designer.cs">
+      <DependentUpon>GridMeeting.aspx</DependentUpon>
     </Compile>
     <Compile Include="FramePage\Meeting.aspx.cs">
       <DependentUpon>Meeting.aspx</DependentUpon>
@@ -167,7 +185,9 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="Ajax\MeetingRoom.ashx" />
+    <Content Include="Ajax\MeetingItems.ashx" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -30,14 +30,10 @@
     
         .clear { clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
     </style>
-
-    <script type="text/javascript" src="/Scripts/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript">
-        var section = [{key: 1, label: '主会议室' }];
-    </script>
-    <script type="text/javascript" src="/Scripts/meeting.js"></script>
 </head>
 <body>
+    <script type="text/javascript" src="/Scripts/meeting.js"></script>
+
     <div class="tl_container" style="margin-bottom:2px;">
         <div style="float:left;"><%=DateTime.Now.ToShortDateString() %> 至 <%=DateTime.Now.AddDays(7).ToShortDateString() %> 期间会议室预订情况</div>
         <div style="float:right;margin-top:7px;margin-right:18px;">
@@ -83,31 +79,28 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        function afterGetRooms(sections) {
+            if (!sections) return;
+
             var start = new Date(),
                 end = new Date();
-            end.setTime(start.getTime());
+            end.setTime(start.getTime() + (7 * 24 * 60 * 60 * 1000));
 
-            $('#dtpStart').val(start.format('yyyy-MM-dd'));
-            if (!section) return;
-
-            create_timeline(section);
-
+            create_timeline(sections);
             loading(start, end);
 
             var t = new Date();
             var hh = t.getHours() * 2 + (t.getMinutes() >= 30 ? 1 : 0);
-            $('.tl_line').scrollLeft($('#' + t.format('yyyy-MM-dd') + '_' + hh).offset().left - $('.tl_line').offset().left);
+            Ext.select('.tl_line').scroll('l', 
+                Ext.select('#' + t.format('yyyy-MM-dd') + '_' + hh).first().getX() -
+                Ext.select('.tl_line').first().getX());
+        }
 
-            $('#btnQuery').click(function () {
-                if ($('#dtpStart').val() == '') {
-                    alert('请选择查询日期');
+        Ext.onReady(function () {
+            App.direct.GetRooms({
+                success: function (result) {
+                    afterGetRooms(result);
                 }
-
-                var s = new Date(Date.parse($('#dtpStart').val().replace(/-/g, "/") + ' 00:00:00'));
-                var e = new Date(s.getTime());
-
-                loading(s, e);
             });
         });
 
@@ -122,19 +115,19 @@
             }
 
             // loading data
-            $.ajax({
-                url: "/Manager/Module/CRS/ajax/MeetingItems.aspx",
-                type: "GET",
-                dataType: "json",
-                data: { s: s, e: e },
-                contentType: "application/json",
-                cache: false,
-                success: function (data) {
-                    if (data && data.state == 'true') {
-                        add_task(data.items);
-                    }
-                }
-            });
+            //$.ajax({
+            //    url: "/Ajax/MeetingItems.ashx",
+            //    type: "GET",
+            //    dataType: "json",
+            //    data: { s: s, e: e },
+            //    contentType: "application/json",
+            //    cache: false,
+            //    success: function (data) {
+            //        if (data && data.state == 'true') {
+            //            add_task(data.items);
+            //        }
+            //    }
+            //});
         }
     </script>
 </body>

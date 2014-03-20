@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" href="/Content/css/main.css" />
+    <link rel="stylesheet" href="/Content/css/main.css" />    
 </head>
 <body>   
     <ext:Viewport runat="server" Layout="BorderLayout">
@@ -102,6 +102,7 @@
     <script type="text/javascript">
         /// <reference path="/Scripts/ext-all.js" />
         /// <reference path="/Scripts/extnet-all.js" />
+
     </script>
 </body>
 </html>

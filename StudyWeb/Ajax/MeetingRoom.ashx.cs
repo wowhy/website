@@ -29,7 +29,7 @@ namespace StudyWeb.Ajax
                         break;
 
                     case StoreAction.Create:
-                        this.AddData(new StoreDataHandler(context).ObjectData<tb_MeetingRoom>());
+                        this.AddData(new StoreDataHandler(context).ObjectData<tb_MeetingRoom>(), sr);
                         break;
 
                     case StoreAction.Destroy:
@@ -58,20 +58,24 @@ namespace StudyWeb.Ajax
             }
         }
 
-        private void AddData(List<tb_MeetingRoom> list)
+        private void AddData(List<tb_MeetingRoom> list, StoreResponseData sr)
         {
             using (var db = new UnitContext())
             {
                 db.BeginTransaction();
 
+                var adds = new List<int>();
+
                 foreach (var room in list)
                 {
-                    db.tb_MeetingRoom.Insert(() => new tb_MeetingRoom 
+                    adds.Add(Convert.ToInt32(db.tb_MeetingRoom.InsertWithIdentity(() => new tb_MeetingRoom
                     {
                         RoomName = room.RoomName,
                         Location = room.Location ?? ""
-                    });
+                    })));
                 }
+
+                sr.Data = JSON.Serialize(db.tb_MeetingRoom.Where(k => adds.Contains(k.Id)).ToList());
 
                 db.CommitTransaction();
             }

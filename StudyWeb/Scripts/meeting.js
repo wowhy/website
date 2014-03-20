@@ -29,7 +29,7 @@ function create_timeline(sections) {
     __tl.tasks = [];
 
     for (var i = 0; i < sections.length; i++) {
-        $('#room tbody').append('<tr><td>' + sections[i].label + '</td></tr>');
+        Ext.select('#room tbody').first().insertHtml('beforeEnd', '<tr><td>' + sections[i].label + '</td></tr>');
     }
 }
 
@@ -46,14 +46,14 @@ function init_timeline(start, end, st) {
     __tl.days = 0;      // 总共日期
     __tl.map = [];      // 索引映射, 2维数组, 根据日期及时间偏移量查找对应的列Index 
 
-    var c_date = $('#timeline thead #c_date'), // 日期表头
-	            c_time = $('#timeline thead #c_time'), // 时间表头
-	            t_body = $('#timeline tbody'), // 背景单元
-                cols = 0;   // 时间列index
+    var c_date = Ext.select('#timeline thead #c_date'), // 日期表头
+	    c_time = Ext.select('#timeline thead #c_time'), // 时间表头
+	    t_body = Ext.select('#timeline tbody'), // 背景单元
+        cols = 0;   // 时间列index
 
-    t_body.html('');
-    c_date.html('');
-    c_time.html('');
+    t_body.update('');
+    c_date.update('');
+    c_time.update('');
 
     var index = 0;
     if (st != undefined) {
@@ -68,9 +68,9 @@ function init_timeline(start, end, st) {
         var tmp = start.format('yyyy-MM-dd');
         __tl.map[tmp] = array;
 
-        c_date.append('<td colspan="' + (48 - index) + '">' + tmp + '</td>');
+        c_date.insertHtml('beforeEnd', '<td colspan="' + (48 - index) + '">' + tmp + '</td>');
         for (var i = index; i < 48; i++) {
-            c_time.append('<td id=' + tmp + '_' + i + '>' +
+            c_time.insertHtml('beforeEnd', '<td id=' + tmp + '_' + i + '>' +
                         (i < 20 ? '0' : '') +
                         Math.round(i / 2 - 0.1) + ':' + (i % 2 == 0 ? '00' : '30') +
                         '</td>');
@@ -104,7 +104,7 @@ function init_timeline(start, end, st) {
 //        }
 
         tr += '</tr>';
-        t_body.append($(tr));
+        t_body.insertHtml('beforeEnd', tr);
     }
 }
 

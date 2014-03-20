@@ -1,4 +1,5 @@
-﻿using StudyWeb.Model;
+﻿using Ext.Net;
+using StudyWeb.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace StudyWeb
 {
     public partial class Default
     {
+        [DirectMethod]
         public List<tb_MeetingRoom> GetRooms()
         {
             using (var db = new UnitContext())

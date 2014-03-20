@@ -16,7 +16,7 @@ namespace StudyWeb
             protected set { manager = value; }
         }
 
-        protected override void OnInit(EventArgs e)
+        protected override void OnPreLoad(EventArgs e)
         {
             this.Header.Controls.Add(manager);
             if (!IsPostBack)
