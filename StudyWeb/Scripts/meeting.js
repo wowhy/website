@@ -1,4 +1,7 @@
-﻿Date.prototype.format = function (format) {
+﻿/// <reference path="/Scripts/ext-all.js" />
+/// <reference path="/Scripts/extnet-all.js" />
+
+Date.prototype.format = function (format) {
     var o = {
         "M+": this.getMonth() + 1, //month
         "d+": this.getDate(),    //day
@@ -123,14 +126,14 @@ function add_task(tasks) {
         // 起始单元格 index
         var cols = __tl.map[start.format('yyyy-MM-dd')][id];
         var td_class = tasks[i].permission == 'true' ? 'tl_task_p' : 'tl_task';
-        $('tr[key=' + tasks[i].section_id + '] td:eq(' + cols + ')')
-                    .addClass(td_class)
-                    .attr('title', tasks[i].text);
+        Ext.select('tr[key=' + tasks[i].section_id + '] td:eq(' + cols + ')')
+                    .addCls(td_class)
+                    .set({ 'title': tasks[i].text });
 
         if (offset > 0) {
-            $('tr[key=' + tasks[i].section_id + '] td:gt(' + cols + '):lt(' + offset + ')')
-                    .addClass(td_class)
-                    .attr('title', tasks[i].text);
+            Ext.select('tr[key=' + tasks[i].section_id + '] td:gt(' + cols + '):lt(' + offset + ')')
+                    .addCls(td_class)
+                    .set({ 'title': tasks[i].text });
         }
     }
 }

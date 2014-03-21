@@ -18,6 +18,10 @@
     
         .tl_container table{ border-collapse:collapse; text-align:center; }
         .tl_container table td { font-size:12px; }
+        /*.x-theme-blue .tl_container thead { background:#99bce8; }
+        .x-theme-access .tl_container thead { background:#606877; }
+        .x-theme-neptune .tl_container thead { background:#157fcc; }*/
+        .x-theme-access .tl_container thead { background:#606877; }
         .tl_container thead { background:#dcdcdc; }
         .tl_container thead td{ height:20px; }
         .tl_room table td { border:1px solid #9f9f9f;  height:20px; }
@@ -30,25 +34,24 @@
     
         .clear { clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
     </style>
+    <script type="text/javascript" src="/Scripts/meeting.js"></script>
 </head>
 <body>
-    <script type="text/javascript" src="/Scripts/meeting.js"></script>
-
-    <div class="tl_container" style="margin-bottom:2px;">
+    <div class="tl_container" style="margin-top:7px;">
         <div style="float:left;"><%=DateTime.Now.ToShortDateString() %> 至 <%=DateTime.Now.AddDays(7).ToShortDateString() %> 期间会议室预订情况</div>
-        <div style="float:right;margin-top:7px;margin-right:18px;">
+        <div style="float:right;margin-right:18px;">
             <div style="float:left;margin-left:10px;">
-            我的预订:&nbsp;&nbsp;
+                我的预订:&nbsp;&nbsp;
             </div>
             <div style="float:left;width:30px;background:#98FB98;">&nbsp;</div>
             <div style="float:left;margin-left:10px;">
-            他人预订:&nbsp;&nbsp;
+                他人预订:&nbsp;&nbsp;
             </div>
             <div style="float:left;width:30px;background:#D2691E;">&nbsp;</div>
         </div>
     </div>
     <div class="clear"></div>
-    <div class="tl_container">
+    <div class="tl_container" style="margin-top:7px;">
         <div class="tl_room">
             <table id="room" style="width:100%">
                 <thead>
@@ -79,6 +82,9 @@
     </div>
 
     <script type="text/javascript">
+        /// <reference path="/Scripts/ext-all.js" />
+        /// <reference path="/Scripts/extnet-all.js" />
+
         function afterGetRooms(sections) {
             if (!sections) return;
 
@@ -114,6 +120,7 @@
                 init_timeline(start, end, st);
             }
 
+            
             // loading data
             //$.ajax({
             //    url: "/Ajax/MeetingItems.ashx",
