@@ -114,26 +114,21 @@ function init_timeline(start, end, st) {
 function add_task(tasks) {
     for (var i = 0; i < tasks.length; i++) {
         var start = new Date(Date.parse(tasks[i].start.replace(/-/g, "/"))),
-                    end = new Date(Date.parse(tasks[i].end.replace(/-/g, "/")));
+            end = new Date(Date.parse(tasks[i].end.replace(/-/g, "/")));
 
         // id: 起始单元格相对日期的索引
         // offset: 单元格偏移量
-        var id = start.getHours() * 2 + (start.getMinutes() >= 30 ? 1 : 0),
-                    offset = ((end.getHours() - start.getHours()) * 60 + (end.getMinutes() - start.getMinutes())) / 30;
+        var id = start.getHours() * 2 + (start.getMinutes() >= 30 ? 0 : -1),
+            offset = ((end.getHours() - start.getHours()) * 60 + (end.getMinutes() - start.getMinutes())) / 30;
         offset = Math.round(offset);
-        offset = offset == 0 ? 0 : offset - 1;
 
         // 起始单元格 index
-        var cols = __tl.map[start.format('yyyy-MM-dd')][id];
+        var cols = __tl.map[start.format('yyyy-MM-dd')][id] - 1;
         var td_class = tasks[i].permission == 'true' ? 'tl_task_p' : 'tl_task';
-        Ext.select('tr[key=' + tasks[i].section_id + '] td:eq(' + cols + ')')
-                    .addCls(td_class)
-                    .set({ 'title': tasks[i].text });
 
-        if (offset > 0) {
-            Ext.select('tr[key=' + tasks[i].section_id + '] td:gt(' + cols + '):lt(' + offset + ')')
-                    .addCls(td_class)
-                    .set({ 'title': tasks[i].text });
+        var items = Ext.select('tr[key=' + tasks[i].section_id + '] td');
+        for (var j = cols; j < cols + offset; j++) {
+            items.item(j).addCls(td_class).set({ 'title': tasks[i].text });
         }
     }
 }

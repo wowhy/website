@@ -24,5 +24,25 @@ namespace StudyWeb.FramePage
                 return query.ToList();
             }
         }
+
+        [DirectMethod]
+        public static object GetMeetings()
+        {
+            using (var db = new UnitContext())
+            {
+                var query = from p in db.tb_MeetingTime
+                            where p.State == 1
+                            select new
+                            {
+                                section_id = p.tbMeetingOrder.RoomId,
+                                text = p.tbMeetingOrder.Content,
+                                start = p.MeetingStartTime,
+                                end = p.MeetingEndTime,
+                                permission = false
+                            };
+
+                return query.ToList();
+            }
+        }
     }
 }

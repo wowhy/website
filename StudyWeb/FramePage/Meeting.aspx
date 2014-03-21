@@ -34,7 +34,7 @@
     
         .clear { clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
     </style>
-    <script type="text/javascript" src="/Scripts/meeting.js"></script>
+    <script type="text/javascript" src="/Scripts/meeting.js?v=14321"></script>
 </head>
 <body>
     <div class="tl_container" style="margin-top:7px;">
@@ -104,9 +104,7 @@
 
         Ext.onReady(function () {
             App.direct.GetRooms({
-                success: function (result) {
-                    afterGetRooms(result);
-                }
+                success: afterGetRooms
             });
         });
 
@@ -120,7 +118,10 @@
                 init_timeline(start, end, st);
             }
 
-            
+            App.direct.GetMeetings({
+                success: add_task
+            });
+
             // loading data
             //$.ajax({
             //    url: "/Ajax/MeetingItems.ashx",

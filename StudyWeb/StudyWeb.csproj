@@ -102,9 +102,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ajax\MeetingItems.ashx.cs">
-      <DependentUpon>MeetingItems.ashx</DependentUpon>
-    </Compile>
     <Compile Include="Ajax\MeetingRoom.ashx.cs">
       <DependentUpon>MeetingRoom.ashx</DependentUpon>
     </Compile>
@@ -185,7 +182,6 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="Ajax\MeetingRoom.ashx" />
-    <Content Include="Ajax\MeetingItems.ashx" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <Content Include="Scripts\jquery-2.1.0.min.map" />
     <None Include="Web.Debug.config">
