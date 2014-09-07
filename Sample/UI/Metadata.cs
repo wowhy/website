@@ -9,15 +9,15 @@ namespace Sample.UI
     public enum DataType
     {
         None = 0,
-        Guid,
-        Number,
-        Money,
+        Integer,
+        Decimal,
         String,
         Date,
         DateTime,
-        File,
-        Image,
-        SystemID
+        Binary, // file or image
+
+        Guid, // foreign key
+        Table // list
     }
 
     public enum ControlType
@@ -27,8 +27,11 @@ namespace Sample.UI
         NumberField,
         DateField,
         FileUpload,
+        Combobox,
         LookupField,
-        TextArea
+        TextArea,
+
+        GridEdit
     }
 
     public class Metadata
