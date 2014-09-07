@@ -1,5 +1,6 @@
 ﻿namespace Sample.UI
 {
+    using Ext.Net;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -8,5 +9,6 @@
 
     public interface ILayoutProvider
     {
+        void DoLayout(IEnumerable<MetadataGroup> groups, IEnumerable<AbstractComponent> controls);
     }
 }

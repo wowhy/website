@@ -23,8 +23,23 @@ namespace Sample.UI
 
         public ILayoutProvider LayoutProvider { get; private set; }
 
-        public void CreateUI(AbstractContainer container)
+        public void CreateUI(AbstractContainer container, string entity)
         {
+            var metadatas = this.MetadataProvider.GetMetadatas(entity);
+            var groups = metadatas.GroupBy();
+
+            var controls = new List<AbstractComponent>();
+            foreach (var item in metadatas)
+            {
+                controls.Add(this.CreateControl(item)); 
+            }
+
+            this.LayoutProvider.DoLayout(groups, controls);
+        }
+
+        private AbstractComponent CreateControl(Metadata item)
+        {
+            throw new NotImplementedException();
         }
     }
 }
