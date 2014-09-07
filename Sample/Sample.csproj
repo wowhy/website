@@ -106,9 +106,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\ILayoutProvider.cs" />
+    <Compile Include="UI\IMetadataProvider.cs" />
     <Compile Include="UI\Metadata.cs" />
     <Compile Include="UI\MetadataGroup.cs" />
     <Compile Include="UI\MetadataList.cs" />
+    <Compile Include="UI\UIHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

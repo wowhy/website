@@ -40,11 +40,12 @@ namespace Sample.UI
         public Metadata(
             string entityName,
             string groupName,
-            string fieldName, 
+            string fieldName,
             string displayName,
             DataType dataType,
             ControlType controlType,
-            bool required)
+            bool required,
+            int order)
         {
             this.EntityName = entityName;
             this.GroupName = groupName;
@@ -53,6 +54,7 @@ namespace Sample.UI
             this.DataType = dataType;
             this.ControlType = controlType;
             this.Required = required;
+            this.Order = order;
         }
 
         public string Id
@@ -70,5 +72,6 @@ namespace Sample.UI
         public DataType DataType { get; set; }
         public ControlType ControlType { get; set; }
         public bool Required { get; set; }
+        public int Order { get; set; }
     }
 }

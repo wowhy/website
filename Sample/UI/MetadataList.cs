@@ -5,15 +5,31 @@
     using System.Linq;
     using System.Web;
     
-    public class MetadataList : List<Metadata>
+    public class MetadataList : SortedSet<Metadata>
     {
+        internal class MetadataComaper : IComparer<Metadata>
+        {
+            private static MetadataComaper _default = new MetadataComaper();
+            public static MetadataComaper Default { get { return _default; } }
+
+            public int Compare(Metadata x, Metadata y)
+            {
+                return Comparer<int>.Default.Compare(x.Order, y.Order);
+            }
+        }
+
         public MetadataList()
+            : base(MetadataComaper.Default)
         {
         }
 
         public MetadataList(IEnumerable<Metadata> collection)
+            : base(MetadataComaper.Default)
         {
-            this.AddRange(collection);
+            foreach (var item in collection)
+            {
+                this.Add(item);
+            }
         }
 
         public IEnumerable<MetadataGroup> GroupBy()
