@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-    
+
     public class MetadataList : SortedSet<Metadata>
     {
         internal class MetadataComaper : IComparer<Metadata>
@@ -14,7 +14,14 @@
 
             public int Compare(Metadata x, Metadata y)
             {
-                return Comparer<int>.Default.Compare(x.Order, y.Order);
+                var compare = x.Order - y.Order;
+
+                if (compare == 0)
+                {
+                    return string.Compare(x.Id, y.Id);
+                }
+
+                return compare;
             }
         }
 
@@ -24,12 +31,8 @@
         }
 
         public MetadataList(IEnumerable<Metadata> collection)
-            : base(MetadataComaper.Default)
+            : base(collection, MetadataComaper.Default)
         {
-            foreach (var item in collection)
-            {
-                this.Add(item);
-            }
         }
 
         public IEnumerable<MetadataGroup> GroupBy()

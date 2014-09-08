@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
     using System.Linq;
     using System.Web;
     
@@ -9,7 +10,17 @@
     {
         public MetadataList GetMetadatas(string entity)
         {
-            throw new NotImplementedException();
+            var list = new MetadataList();
+            var type = Type.GetType(entity);
+            
+            Contract.Assert(type != null, "type");
+
+            var props = type.GetProperties();
+            foreach (var prop in props)
+            {
+            }
+
+            return list;
         }
     }
 }
