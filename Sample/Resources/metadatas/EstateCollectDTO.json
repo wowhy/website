@@ -1,0 +1,82 @@
+﻿{
+    "name": "EstateCollectDTO",
+    "groups": [
+        {
+            "GroupName": "基础信息",
+            "Metadatas": [
+                {
+                    "EntityName": "Estate",
+                    "FieldName": "Code",
+                    "DisplayName": "楼盘代码",
+                    "DataTypeName": "string",
+                    "ControlTypeName": "textbox",
+                    "Order": 1,
+                    "Required": true,
+                    "ReadOnly": true
+                },
+                {
+                    "EntityName": "Estate",
+                    "FieldName": "Name",
+                    "DisplayName": "楼盘名称",
+                    "DataType": 4,
+                    "ControlType": 1,
+                    "Order": 2,
+                    "Required": true,
+                    "ReadOnly": true
+                },
+                {
+                    "EntityName": "Estate",
+                    "FieldName": "PeriodName",
+                    "DisplayName": "楼盘分期",
+                    "DataType": 4,
+                    "ControlType": 1,
+                    "Order": 3,
+                    "Required": true,
+                    "ReadOnly": true
+                },
+                {
+                    "EntityName": "Estate",
+                    "FieldName": "CityId",
+                    "DisplayName": "城市",
+                    "DataType": 100,
+                    "ControlType": 5,
+                    "Order": 4,
+                    "Required": true,
+                    "ReadOnly": true,
+
+                    "Value": "entity:City"
+                },
+                {
+                    "EntityName": "Estate",
+                    "FieldName": "District",
+                    "DisplayName": "城区",
+                    "DataType": 4,
+                    "ControlType": 8,
+                    "Order": 4,
+                    "Required": true,
+                    "ReadOnly": true,
+
+                    "Value": "entity:District"
+                },
+                {
+                    "EntityName": "Estate",
+                    "FieldName": "GeographicAreaId",
+                    "DisplayName": "地理范围",
+                    "DataType": 4,
+                    "ControlType": 8,
+                    "Order": 4,
+                    "Required": true,
+                    "ReadOnly": true,
+
+                    "Value": "entity:GeographicArea"
+                }
+            ]
+        },
+        {
+            "GroupName": "楼盘信息",
+            "Metadatas": [
+                { }
+            ]
+        }
+    ]
+}

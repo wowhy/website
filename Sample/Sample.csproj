@@ -88,6 +88,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Ext.NET.Default.aspx" />
     <Content Include="Global.asax" />
+    <None Include="Resources\metadatas\EstateCollectItemDTO.json" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +119,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="App_Readme\Ext.NET\Sample.Web.config" />
+    <EmbeddedResource Include="Resources\metadatas\EstateCollectDTO.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -151,6 +153,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties Resources_2metadatas_2EstateCollectDTO_1json__JSONSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

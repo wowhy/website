@@ -1,0 +1,108 @@
+﻿{
+    "name": "HSNet.Domain.CRM.DTO.EstateCollectItemDTO",
+    "groups": [
+        {
+            "GroupName": "基本信息",
+            "Metadatas": [
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "Code",
+                    "DisplayName": "代码",
+                    "DataType": 4,
+                    "ControlType": 1,
+                    "Order": 1,
+                    "Required": true,
+                    "ReadOnly": true
+                },
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "Name",
+                    "DisplayName": "名称",
+                    "DataType": 4,
+                    "ControlType": 1,
+                    "Order": 2,
+                    "Required": true,
+                    "ReadOnly": true
+                },
+                {
+                    "EntityName": "EstateDictionaryRank",
+                    "FieldName": "ItemRank",
+                    "DisplayName": "采集项类型",
+                    "DataType": 2,
+                    "ControlType": 5,
+                    "Order": 3,
+                    "Required": true,
+                    "ReadOnly": true,
+                    "Value": "enum:EstateDictionaryRank"
+                },
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "IsRequired",
+                    "DisplayName": "是否必填",
+                    "DataType": 1,
+                    "ControlType": 5,
+                    "Order": 4,
+                    "Required": true,
+                    "ReadOnly": true
+                },
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "CollectStatus",
+                    "DisplayName": "采集项状态",
+                    "DataType": 2,
+                    "ControlType": 5,
+                    "Order": 5,
+                    "Required": true,
+                    "Value": "enum:CollectStatus"
+                },
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "CollectRole",
+                    "DisplayName": "采集角色",
+                    "DataType": 2,
+                    "ControlType": 5,
+                    "Order": 6,
+                    "Required": true,
+                    "Value": "enum:CollectRole"
+                },
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "IsCheckItem",
+                    "DisplayName": "是否考核",
+                    "DataType": 1,
+                    "ControlType": 5,
+                    "Order": 7,
+                    "Required": true
+                },
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "ItemScore",
+                    "DisplayName": "采集积分",
+                    "DataType": 2,
+                    "ControlType": 2,
+                    "Order": 8,
+                    "Required": true
+                },
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "CollectDays",
+                    "DisplayName": "采集期",
+                    "DataType": 3,
+                    "ControlType": 2,
+                    "Order": 9,
+                    "Required": true
+                },
+                {
+                    "EntityName": "EstateCollectItem",
+                    "FieldName": "Status",
+                    "DisplayName": "状态",
+                    "DataType": 2,
+                    "ControlType": 5,
+                    "Order": 10,
+                    "Required": true,
+                    "Value": "enum:EstateCollectItemStatus"
+                }
+            ]
+        }
+    ]
+}
