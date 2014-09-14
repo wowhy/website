@@ -43,8 +43,6 @@ namespace Sample.UI
         }
 
         public Metadata(
-            string entityName,
-            string groupName,
             string fieldName,
             string displayName,
             DataType dataType,
@@ -52,8 +50,6 @@ namespace Sample.UI
             bool required,
             int order)
         {
-            this.EntityName = entityName;
-            this.GroupName = groupName;
             this.FieldName = fieldName;
             this.DisplayName = displayName;
             this.DataType = dataType;
@@ -70,7 +66,20 @@ namespace Sample.UI
             }
         }
 
-        public string EntityName { get; set; }
+        private string entityName;
+        public string EntityName 
+        {
+            get 
+            {
+                if (this.Group != null) 
+                {
+                    return this.Group.EntityName;
+                }
+
+                return this.entityName;
+            }
+            set { this.entityName = value; } 
+        }
 
         private string groupName;
         public string GroupName

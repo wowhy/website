@@ -11,6 +11,8 @@
 
         public string GroupName { get; set; }
 
+        public string EntityName { get; set; }
+
         public MetadataList Metadatas
         {
             get { return this.metadatas; }
