@@ -9,9 +9,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    </div>
+        <p>Current App: <%=SampleLibrary.WebHelper.CurrentApp %></p>
+        <p>Current SessionId: <%=this.Session.SessionID %></p>
+        <p>Current User: <%=this.Session["user"] %></p>
+        <p><a href="/Alpha/Default.aspx" target="_blank">Alpha</a></p>
+        <p><a href="/Beta/Default.aspx" target="_blank">Beta</a></p>
     </form>
 </body>
 </html>

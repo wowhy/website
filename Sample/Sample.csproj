@@ -88,6 +88,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Ext.NET.Default.aspx" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Resources\metadatas\EstateCollectItemDTO.json" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -129,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleLibrary\SampleLibrary.csproj">
+      <Project>{906353f8-01e4-4b5e-9ace-70b0340d0c6b}</Project>
+      <Name>SampleLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

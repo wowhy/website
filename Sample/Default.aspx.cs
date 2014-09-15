@@ -16,17 +16,7 @@ namespace Sample
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Sample.Resources.metadatas.EstateCollectDTO.json"))
-            using (var sr = new StreamReader(stream))
-            {
-                var json = (JObject)JsonConvert.DeserializeObject(sr.ReadToEnd());
-                var groups = json["groups"].ToObject<List<MetadataGroup>>();
-
-                if (json != null)
-                {
- 
-                }
-            }
+            this.Session["user"] = "test";
         }
     }
 }
