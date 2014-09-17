@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Alpha\Default.aspx" />
-    <Content Include="WebAppAlphaGlobal.asax" />
+    <Content Include="Alpha\WebAppAlphaGlobal.asax" />
     <Content Include="Alpha\Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +69,7 @@
     <Compile Include="Alpha\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebAppAlphaGlobal.asax.cs">
+    <Compile Include="Alpha\WebAppAlphaGlobal.asax.cs">
       <DependentUpon>WebAppAlphaGlobal.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

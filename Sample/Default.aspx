@@ -12,6 +12,8 @@
         <p>Current App: <%=SampleLibrary.WebHelper.CurrentApp %></p>
         <p>Current SessionId: <%=this.Session.SessionID %></p>
         <p>Current User: <%=this.Session["user"] %></p>
+        <p>Current AppDomainId: <%=System.Web.HttpRuntime.AppDomainId %></p>
+        <p>Current AppDomainAppId: <%=System.Web.HttpRuntime.AppDomainAppId %></p>
         <p><a href="/Alpha/Default.aspx" target="_blank">Alpha</a></p>
         <p><a href="/Beta/Default.aspx" target="_blank">Beta</a></p>
     </form>
