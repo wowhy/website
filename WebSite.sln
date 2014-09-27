@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OceanWechat", "OceanWechat\OceanWechat.csproj", "{808069A9-1AF2-41F3-BAE4-104F87D1DE54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OceanWechat", "OceanWechat\OceanWechat.csproj", "{B2932948-F30E-4788-B9AB-8753C1E881AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OceanWechat.Tests", "OceanWechat.Tests\OceanWechat.Tests.csproj", "{58512E62-8A19-41EA-997C-F13A363A8B6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OceanWechat.Tests", "OceanWechat.Tests\OceanWechat.Tests.csproj", "{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{808069A9-1AF2-41F3-BAE4-104F87D1DE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{808069A9-1AF2-41F3-BAE4-104F87D1DE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{808069A9-1AF2-41F3-BAE4-104F87D1DE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{808069A9-1AF2-41F3-BAE4-104F87D1DE54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58512E62-8A19-41EA-997C-F13A363A8B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58512E62-8A19-41EA-997C-F13A363A8B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58512E62-8A19-41EA-997C-F13A363A8B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58512E62-8A19-41EA-997C-F13A363A8B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2932948-F30E-4788-B9AB-8753C1E881AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2932948-F30E-4788-B9AB-8753C1E881AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2932948-F30E-4788-B9AB-8753C1E881AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2932948-F30E-4788-B9AB-8753C1E881AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
