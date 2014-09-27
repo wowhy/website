@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OceanWechat", "OceanWechat\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OceanWechat.Tests", "OceanWechat.Tests\OceanWechat.Tests.csproj", "{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wechat.SDK", "Wechat.SDK\Wechat.SDK.csproj", "{D3524D80-1D4E-40E8-A204-5580318563BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{796FDF3B-DA5F-43BC-A9BF-DF2EB6AE207A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3524D80-1D4E-40E8-A204-5580318563BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3524D80-1D4E-40E8-A204-5580318563BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3524D80-1D4E-40E8-A204-5580318563BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3524D80-1D4E-40E8-A204-5580318563BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
