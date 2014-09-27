@@ -26,5 +26,10 @@ namespace OceanWechat.Controllers
 
             return View();
         }
+
+        public ActionResult Goto(string url) 
+        {
+            return Redirect(url);
+        }
     }
 }
