@@ -30,6 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HyLibrary">
+      <HintPath>..\OceanWechat\HyLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\WexinHelper.cs" />
     <Compile Include="Message\MessageBase.cs" />
     <Compile Include="Message\ReceiveMessageBase.cs" />
     <Compile Include="Message\Receive\ImageMessage.cs" />
@@ -61,6 +69,7 @@
     <Content Include="Resources\RetCodes.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\RetCodes.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RetCodes.generic.cs</LastGenOutput>
@@ -70,8 +79,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\" />
-    <Folder Include="Internal\" />
     <Folder Include="Message\Send\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
