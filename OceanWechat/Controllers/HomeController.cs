@@ -56,45 +56,6 @@
             return string.Empty;
         }
 
-        public ActionResult Goto(string url)
-        {
-            // return Redirect(url);
-
-            var request = (HttpWebRequest)HttpWebRequest.Create(url);
-
-            // request.UserAgent = "mozilla/5.0 (iphone; cpu iphone os 7_1_2 like mac os x) applewebkit/534.46 (khtml, like gecko) mobile/9b206";
-            request.UserAgent = this.Request.UserAgent;
-            var index = request.UserAgent.IndexOf("micromessenger", StringComparison.OrdinalIgnoreCase);
-            if (index != -1)
-            {
-                request.UserAgent = request.UserAgent.Substring(0, index);
-            }
-
-            using (var response = (HttpWebResponse)request.GetResponse())
-            using (var stream = response.GetResponseStream())
-            {
-                foreach (var header in response.Headers.AllKeys)
-                {
-                    if (this.Response.Headers[header] != null)
-                    {
-                        this.Response.Headers[header] = response.Headers[header];
-                    }
-                }
-
-                var ms = new MemoryStream();
-                var buffer = new byte[4096];
-                var len = 0;
-                while ((len = stream.Read(buffer, 0, 4096)) > 0)
-                {
-                    ms.Write(buffer, 0, len);
-                }
-
-                ms.Seek(0, SeekOrigin.Begin);
-
-                return File(ms, response.ContentType);
-            }
-        }
-
         public ActionResult Taobao(string id)
         {
             var url = "http://h5.m.taobao.com/awp/core/detail.htm?id=" + id;
@@ -131,10 +92,18 @@
             }
         }
 
-        public ActionResult TaobaoApp(string id)
+        public ActionResult TaobaoApp(string id, string view)
         {
             var url = "taobao://h5.m.taobao.com/awp/core/detail.htm?id=" + id;
-            return Redirect(url);
+
+            if (!string.IsNullOrEmpty(view))
+            {
+                this.ViewBag.Id = id;
+                this.ViewBag.Url = url;
+                return this.View();
+            }
+
+            return this.Redirect(url);
         }
     }
 }
