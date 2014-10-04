@@ -168,9 +168,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -248,10 +245,21 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OceanWechat.Controllers\OceanWechat.Controllers.csproj">
+      <Project>{b110997a-8d52-472b-89b2-99ad019225e5}</Project>
+      <Name>OceanWechat.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OceanWechat.Models\OceanWechat.Models.csproj">
+      <Project>{24434b2f-393c-4d74-8d03-9c7ef8affd8a}</Project>
+      <Name>OceanWechat.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wechat.SDK\Wechat.SDK.csproj">
       <Project>{d3524d80-1d4e-40e8-a204-5580318563bd}</Project>
       <Name>Wechat.SDK</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
