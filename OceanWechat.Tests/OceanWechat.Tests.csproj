@@ -92,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OceanWechat.Controllers\OceanWechat.Controllers.csproj">
+      <Project>{b110997a-8d52-472b-89b2-99ad019225e5}</Project>
+      <Name>OceanWechat.Controllers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OceanWechat\OceanWechat.csproj">
       <Project>{B2932948-F30E-4788-B9AB-8753C1E881AD}</Project>
       <Name>OceanWechat</Name>
