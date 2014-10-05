@@ -40,7 +40,9 @@ namespace OceanWechat
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static UserManager<ApplicationUser> Create(
+            IdentityFactoryOptions<UserManager<ApplicationUser>> options,
+            IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // 配置用户名的验证逻辑
@@ -54,10 +56,10 @@ namespace OceanWechat
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
 
             // 配置用户锁定默认值
@@ -81,9 +83,10 @@ namespace OceanWechat
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
+
             return manager;
         }
     }
@@ -91,7 +94,9 @@ namespace OceanWechat
     // 配置要在此应用程序中使用的应用程序登录管理器。
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
-        public ApplicationSignInManager(ApplicationUserManager userManager, IAuthenticationManager authenticationManager)
+        public ApplicationSignInManager(
+            UserManager<ApplicationUser> userManager, 
+            IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)
         {
         }
@@ -101,9 +106,11 @@ namespace OceanWechat
             return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
         }
 
-        public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
+        public static ApplicationSignInManager Create(
+            IdentityFactoryOptions<SignInManager<ApplicationUser, string>> options, 
+            IOwinContext context)
         {
-            return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+            return new ApplicationSignInManager(context.GetUserManager<UserManager<ApplicationUser>>(), context.Authentication);
         }
     }
 }

@@ -17,17 +17,17 @@ namespace OceanWechat.Controllers
         {
         }
 
-        public ManageController(ApplicationUserManager userManager)
+        public ManageController(UserManager<ApplicationUser> userManager)
         {
             UserManager = userManager;
         }
 
-        private ApplicationUserManager _userManager;
-        public ApplicationUserManager UserManager
+        private UserManager<ApplicationUser> _userManager;
+        public UserManager<ApplicationUser> UserManager
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<UserManager<ApplicationUser>>();
             }
             private set
             {

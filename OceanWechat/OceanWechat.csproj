@@ -159,6 +159,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Global.asax.cs">
@@ -168,6 +169,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\OceanWechat.mdf" />
+    <Content Include="App_Data\OceanWechat_log.ldf">
+      <DependentUpon>OceanWechat.mdf</DependentUpon>
+    </Content>
     <Content Include="Resources\Content\bootstrap.css" />
     <Content Include="Resources\Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -206,7 +211,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Resources\Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -236,7 +240,6 @@
     <Content Include="Resources\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Resources\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OceanWechat.Controllers\OceanWechat.Controllers.csproj">

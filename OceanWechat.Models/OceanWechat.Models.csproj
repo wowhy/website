@@ -62,6 +62,13 @@
   <ItemGroup>
     <Compile Include="AccountViewModels.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Identity\GuidDbContext.cs" />
+    <Compile Include="Identity\GuidRole.cs" />
+    <Compile Include="Identity\GuidUser.cs" />
+    <Compile Include="Identity\GuidUserClaim.cs" />
+    <Compile Include="Identity\GuidUserLogin.cs" />
+    <Compile Include="Identity\GuidUserManager.cs" />
+    <Compile Include="Identity\GuidUserRole.cs" />
     <Compile Include="ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
